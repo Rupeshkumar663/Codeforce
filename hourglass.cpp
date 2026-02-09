@@ -6,12 +6,15 @@ int main(){
     while(t--){
         long long s,k,m;
         cin>>s>>k>>m;
-        long long temp=(m/k)*k;
-        long long temp1=m-temp;
-        if(temp1>s)
-           cout<<0<<"\n";
+        if(m<s){
+            cout<<s-m<<"\n";
+            continue;
+        }
+        long long r=m%k;
+        if(r>s)
+            cout<<0<<"\n";
         else
-         cout<<s-temp1<<"\n";
+            cout<<s-r<<"\n";
     }
     return 0;
 }
